@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{3796228D-16CB-4EB6-8834-015FBF98B5F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{513504B7-4FD1-4F38-B1C9-27AA94DF3CA5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{A8840F9F-E7E1-4A33-80A6-9C2B07A04061}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FonTech.Api", "FonTech.Api\FonTech.Api.csproj", "{78A5FB5A-EBB6-441E-9202-4C4C3E1C13A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4F31AB4E-B23C-4EAF-84EF-03F7F219B3DB}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FonTech.Domain", "FonTech.Domain\FonTech.Domain.csproj", "{20169CFF-8DD2-4977-9F4F-FC0CB04A460C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FonTech.DAL", "FonTech.DAL\FonTech.DAL.csproj", "{F4B6E236-322A-4102-80AF-765D5C0036A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FonTech.Application", "FonTech.Application\FonTech.Application.csproj", "{3D8BACFA-5C5A-43AC-9455-7C535033DFE0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{78A5FB5A-EBB6-441E-9202-4C4C3E1C13A9} = {513504B7-4FD1-4F38-B1C9-27AA94DF3CA5}
+		{20169CFF-8DD2-4977-9F4F-FC0CB04A460C} = {3796228D-16CB-4EB6-8834-015FBF98B5F2}
+		{F4B6E236-322A-4102-80AF-765D5C0036A2} = {A8840F9F-E7E1-4A33-80A6-9C2B07A04061}
+		{3D8BACFA-5C5A-43AC-9455-7C535033DFE0} = {3796228D-16CB-4EB6-8834-015FBF98B5F2}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78A5FB5A-EBB6-441E-9202-4C4C3E1C13A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78A5FB5A-EBB6-441E-9202-4C4C3E1C13A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78A5FB5A-EBB6-441E-9202-4C4C3E1C13A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78A5FB5A-EBB6-441E-9202-4C4C3E1C13A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20169CFF-8DD2-4977-9F4F-FC0CB04A460C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20169CFF-8DD2-4977-9F4F-FC0CB04A460C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20169CFF-8DD2-4977-9F4F-FC0CB04A460C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20169CFF-8DD2-4977-9F4F-FC0CB04A460C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4B6E236-322A-4102-80AF-765D5C0036A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4B6E236-322A-4102-80AF-765D5C0036A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4B6E236-322A-4102-80AF-765D5C0036A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4B6E236-322A-4102-80AF-765D5C0036A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D8BACFA-5C5A-43AC-9455-7C535033DFE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D8BACFA-5C5A-43AC-9455-7C535033DFE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D8BACFA-5C5A-43AC-9455-7C535033DFE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D8BACFA-5C5A-43AC-9455-7C535033DFE0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

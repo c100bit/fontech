@@ -1,0 +1,11 @@
+/Users/c100bit/RiderProjects/FonTech/FonTech.Domain/bin/Debug/net9.0/FonTech.Domain.deps.json
+/Users/c100bit/RiderProjects/FonTech/FonTech.Domain/bin/Debug/net9.0/FonTech.Domain.dll
+/Users/c100bit/RiderProjects/FonTech/FonTech.Domain/bin/Debug/net9.0/FonTech.Domain.pdb
+/Users/c100bit/RiderProjects/FonTech/FonTech.Domain/obj/Debug/net9.0/FonTech.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/c100bit/RiderProjects/FonTech/FonTech.Domain/obj/Debug/net9.0/FonTech.Domain.AssemblyInfoInputs.cache
+/Users/c100bit/RiderProjects/FonTech/FonTech.Domain/obj/Debug/net9.0/FonTech.Domain.AssemblyInfo.cs
+/Users/c100bit/RiderProjects/FonTech/FonTech.Domain/obj/Debug/net9.0/FonTech.Domain.csproj.CoreCompileInputs.cache
+/Users/c100bit/RiderProjects/FonTech/FonTech.Domain/obj/Debug/net9.0/FonTech.Domain.dll
+/Users/c100bit/RiderProjects/FonTech/FonTech.Domain/obj/Debug/net9.0/refint/FonTech.Domain.dll
+/Users/c100bit/RiderProjects/FonTech/FonTech.Domain/obj/Debug/net9.0/FonTech.Domain.pdb
+/Users/c100bit/RiderProjects/FonTech/FonTech.Domain/obj/Debug/net9.0/ref/FonTech.Domain.dll

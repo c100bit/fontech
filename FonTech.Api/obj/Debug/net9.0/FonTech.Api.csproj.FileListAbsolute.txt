@@ -1,0 +1,7 @@
+/Users/c100bit/RiderProjects/FonTech/FonTech.Api/obj/Debug/net9.0/FonTech.Api.csproj.AssemblyReference.cache
+/Users/c100bit/RiderProjects/FonTech/FonTech.Api/obj/Debug/net9.0/FonTech.Api.GeneratedMSBuildEditorConfig.editorconfig
+/Users/c100bit/RiderProjects/FonTech/FonTech.Api/obj/Debug/net9.0/FonTech.Api.AssemblyInfoInputs.cache
+/Users/c100bit/RiderProjects/FonTech/FonTech.Api/obj/Debug/net9.0/FonTech.Api.AssemblyInfo.cs
+/Users/c100bit/RiderProjects/FonTech/FonTech.Api/obj/Debug/net9.0/FonTech.Api.csproj.CoreCompileInputs.cache
+/Users/c100bit/RiderProjects/FonTech/FonTech.Api/obj/Debug/net9.0/FonTech.Api.MvcApplicationPartsAssemblyInfo.cs
+/Users/c100bit/RiderProjects/FonTech/FonTech.Api/obj/Debug/net9.0/FonTech.Api.MvcApplicationPartsAssemblyInfo.cache
