@@ -1,13 +1,20 @@
+using Asp.Versioning;
 using FonTech.Domain.Dto.Report;
 using FonTech.Domain.Interfaces.Services;
 using FonTech.Domain.Result;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FonTech.Api.Controllers;
 
-//[Authorize]
+/// <summary>
+/// 
+/// </summary>
+/// <param name="service"></param>
+[Authorize]
 [ApiController]
-[Route("api/v1/[controller]")]
+[ApiVersion("1.0")]
+[Route("api/v{version:apiVersion}/[controller]")]
 public class ReportController(IReportService service) : ControllerBase
 {
     [HttpGet("{id:long}")]
@@ -20,6 +27,11 @@ public class ReportController(IReportService service) : ControllerBase
         return BadRequest(response);
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="userId"></param>
+    /// <returns></returns>
     [HttpGet("reports/{userId:long}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -40,6 +52,19 @@ public class ReportController(IReportService service) : ControllerBase
         return BadRequest(response);
     }
 
+    /// <summary>
+    ///     Creating
+    /// </summary>
+    /// <param name="dto"></param>
+    /// <remarks>
+    ///     Request for create report
+    ///     POST {
+    ///     "name": "Report 1",
+    ///     "description": "Test report",
+    ///     "userId": 1
+    ///     }
+    /// </remarks>
+    /// <
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]

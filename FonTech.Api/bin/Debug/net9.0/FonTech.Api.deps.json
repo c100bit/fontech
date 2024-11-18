@@ -8,14 +8,60 @@
     ".NETCoreApp,Version=v9.0": {
       "FonTech.Api/1.0.0": {
         "dependencies": {
+          "Asp.Versioning.Mvc.ApiExplorer": "8.1.0",
           "FonTech.Application": "1.0.0",
           "FonTech.DAL": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "9.0.0",
           "Serilog.AspNetCore": "8.0.3",
-          "Swashbuckle.AspNetCore.SwaggerGen": "7.0.0"
+          "Swashbuckle.AspNetCore.SwaggerGen": "7.0.0",
+          "Swashbuckle.AspNetCore.SwaggerUI": "7.0.0"
         },
         "runtime": {
           "FonTech.Api.dll": {}
+        }
+      },
+      "Asp.Versioning.Abstractions/8.1.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "9.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/Asp.Versioning.Abstractions.dll": {
+            "assemblyVersion": "8.1.0.0",
+            "fileVersion": "8.1.8851.31619"
+          }
+        }
+      },
+      "Asp.Versioning.Http/8.1.0": {
+        "dependencies": {
+          "Asp.Versioning.Abstractions": "8.1.0"
+        },
+        "runtime": {
+          "lib/net8.0/Asp.Versioning.Http.dll": {
+            "assemblyVersion": "8.1.0.0",
+            "fileVersion": "8.1.8851.31627"
+          }
+        }
+      },
+      "Asp.Versioning.Mvc/8.1.0": {
+        "dependencies": {
+          "Asp.Versioning.Http": "8.1.0"
+        },
+        "runtime": {
+          "lib/net8.0/Asp.Versioning.Mvc.dll": {
+            "assemblyVersion": "8.1.0.0",
+            "fileVersion": "8.1.8851.31627"
+          }
+        }
+      },
+      "Asp.Versioning.Mvc.ApiExplorer/8.1.0": {
+        "dependencies": {
+          "Asp.Versioning.Mvc": "8.1.0"
+        },
+        "runtime": {
+          "lib/net8.0/Asp.Versioning.Mvc.ApiExplorer.dll": {
+            "assemblyVersion": "8.1.0.0",
+            "fileVersion": "8.1.8851.31636"
+          }
         }
       },
       "AutoMapper/13.0.1": {
@@ -146,22 +192,22 @@
           "runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-arm",
             "assetType": "native",
-            "fileVersion": "5.1.1.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-arm64",
             "assetType": "native",
-            "fileVersion": "5.1.1.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "5.1.1.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "5.1.1.0"
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -581,6 +627,14 @@
           }
         }
       },
+      "Swashbuckle.AspNetCore.SwaggerUI/7.0.0": {
+        "runtime": {
+          "lib/net9.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.0.854"
+          }
+        }
+      },
       "System.ClientModel/1.0.0": {
         "dependencies": {
           "System.Memory.Data": "1.0.2",
@@ -772,11 +826,11 @@
           }
         },
         "resources": {
-          "en/FonTech.Application.resources.dll": {
-            "locale": "en"
-          },
           "ru/FonTech.Application.resources.dll": {
             "locale": "ru"
+          },
+          "en/FonTech.Application.resources.dll": {
+            "locale": "en"
           }
         }
       },
@@ -809,6 +863,34 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Asp.Versioning.Abstractions/8.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mpeNZyMdvrHztJwR1sXIUQ+3iioEU97YMBnFA9WLbsPOYhGwDJnqJMmEd8ny7kcmS9OjTHoEuX/bSXXY3brIFA==",
+      "path": "asp.versioning.abstractions/8.1.0",
+      "hashPath": "asp.versioning.abstractions.8.1.0.nupkg.sha512"
+    },
+    "Asp.Versioning.Http/8.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Xu4xF62Cu9JqYi/CTa2TiK5kyHoa4EluPynj/bPFWDmlTIPzuJQbBI5RgFYVRFHjFVvWMoA77acRaFu7i7Wzqg==",
+      "path": "asp.versioning.http/8.1.0",
+      "hashPath": "asp.versioning.http.8.1.0.nupkg.sha512"
+    },
+    "Asp.Versioning.Mvc/8.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BMAJM2sGsTUw5FQ9upKQt6GFoldWksePgGpYjl56WSRvIuE3UxKZh0gAL+wDTIfLshUZm97VCVxlOGyrcjWz9Q==",
+      "path": "asp.versioning.mvc/8.1.0",
+      "hashPath": "asp.versioning.mvc.8.1.0.nupkg.sha512"
+    },
+    "Asp.Versioning.Mvc.ApiExplorer/8.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-a90gW/4TF/14Bjiwg9LqNtdKGC4G3gu02+uynq3bCISfQm48km5chny4Yg5J4hixQPJUwwJJ9Do1G+jM8L9h3g==",
+      "path": "asp.versioning.mvc.apiexplorer/8.1.0",
+      "hashPath": "asp.versioning.mvc.apiexplorer.8.1.0.nupkg.sha512"
     },
     "AutoMapper/13.0.1": {
       "type": "package",
@@ -1194,6 +1276,13 @@
       "sha512": "sha512-f/urqk9zkb5ZXc3ljLNP++JgYe2HTlA4WaIaO1DLRQLRFh3HXIZakFfMfTWX1T8NVqeMyJF7MzETN4HsokxNuQ==",
       "path": "swashbuckle.aspnetcore.swaggergen/7.0.0",
       "hashPath": "swashbuckle.aspnetcore.swaggergen.7.0.0.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.SwaggerUI/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rJJony+jsxvpfJM9ZGVxjp0DVpalZv8cAhiMSLW6L2hgUWb7k5qPVuzQHWXtkT8lrG1hQ8vWeR+HUwgCQm9J3A==",
+      "path": "swashbuckle.aspnetcore.swaggerui/7.0.0",
+      "hashPath": "swashbuckle.aspnetcore.swaggerui.7.0.0.nupkg.sha512"
     },
     "System.ClientModel/1.0.0": {
       "type": "package",
