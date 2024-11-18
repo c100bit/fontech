@@ -13,7 +13,7 @@ public static class DependencyInjection
     public static void AddDataAccessLayer(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(configuration.GetConnectionString("MSSQL")));
+            options.UseNpgsql(configuration.GetConnectionString("PostgresSQL")));
 
         services.AddSingleton<DateInterceptor>();
         services.InitRepositories();

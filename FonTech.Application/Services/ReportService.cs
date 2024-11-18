@@ -55,37 +55,38 @@ public class ReportService(
     }
 
     /// <inheritdoc />
-    public async Task<BaseResult<ReportDto>> GetReportByIdAsync(long id)
+    public Task<BaseResult<ReportDto>> GetReportByIdAsync(long id)
     {
         ReportDto? report;
         try
         {
-            report = await reportRepository.GetAll()
+            report = reportRepository.GetAll()
+                .AsEnumerable()
                 .Select(x => new ReportDto(x.Id, x.Name, x.Description, x.CreatedAt.ToLongDateString()))
-                .FirstOrDefaultAsync(x => x.Id == id);
+                .FirstOrDefault(x => x.Id == id);
         }
         catch (Exception e)
         {
             logger.Error(e, e.Message);
-            return new BaseResult<ReportDto>
+            return Task.FromResult(new BaseResult<ReportDto>
             {
                 ErrorCode = (int)ErrorCodes.InternalServerError,
                 ErrorMessage = ErrorMessage.InternalServerError
-            };
+            });
         }
 
         if (report != null)
-            return new BaseResult<ReportDto>
+            return Task.FromResult(new BaseResult<ReportDto>
             {
                 Data = report
-            };
+            });
 
-        logger.Warning("Отчет с {Id} не найден", id);
-        return new BaseResult<ReportDto>
+        logger.Warning($"Отчет с {id} не найден", id);
+        return Task.FromResult(new BaseResult<ReportDto>
         {
             ErrorCode = (int)ErrorCodes.ReportNotFound,
             ErrorMessage = ErrorMessage.ReportNotFound
-        };
+        });
     }
 
     /// <inheritdoc />

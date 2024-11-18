@@ -8,25 +8,32 @@
     "net9.0": []
   },
   "packageFolders": {
-    "/Users/c100bit/.nuget/packages/": {}
+    "C:\\Users\\iokulov\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/c100bit/RiderProjects/FonTech/FonTech.Domain/FonTech.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\iokulov\\RiderProjects\\fontech\\FonTech.Domain\\FonTech.Domain.csproj",
       "projectName": "FonTech.Domain",
-      "projectPath": "/Users/c100bit/RiderProjects/FonTech/FonTech.Domain/FonTech.Domain.csproj",
-      "packagesPath": "/Users/c100bit/.nuget/packages/",
-      "outputPath": "/Users/c100bit/RiderProjects/FonTech/FonTech.Domain/obj/",
+      "projectPath": "C:\\Users\\iokulov\\RiderProjects\\fontech\\FonTech.Domain\\FonTech.Domain.csproj",
+      "packagesPath": "C:\\Users\\iokulov\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\iokulov\\RiderProjects\\fontech\\FonTech.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "UsingMicrosoftNETSdk": false,
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/Users/c100bit/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\iokulov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -65,7 +72,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/Users/c100bit/.dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

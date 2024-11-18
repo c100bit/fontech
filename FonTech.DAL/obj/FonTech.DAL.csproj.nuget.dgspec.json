@@ -1,34 +1,40 @@
 {
   "format": 1,
   "restore": {
-    "/Users/c100bit/RiderProjects/FonTech/FonTech.DAL/FonTech.DAL.csproj": {}
+    "C:\\Users\\iokulov\\RiderProjects\\fontech\\FonTech.DAL\\FonTech.DAL.csproj": {}
   },
   "projects": {
-    "/Users/c100bit/RiderProjects/FonTech/FonTech.DAL/FonTech.DAL.csproj": {
+    "C:\\Users\\iokulov\\RiderProjects\\fontech\\FonTech.DAL\\FonTech.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/c100bit/RiderProjects/FonTech/FonTech.DAL/FonTech.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\iokulov\\RiderProjects\\fontech\\FonTech.DAL\\FonTech.DAL.csproj",
         "projectName": "FonTech.DAL",
-        "projectPath": "/Users/c100bit/RiderProjects/FonTech/FonTech.DAL/FonTech.DAL.csproj",
-        "packagesPath": "/Users/c100bit/.nuget/packages/",
-        "outputPath": "/Users/c100bit/RiderProjects/FonTech/FonTech.DAL/obj/",
+        "projectPath": "C:\\Users\\iokulov\\RiderProjects\\fontech\\FonTech.DAL\\FonTech.DAL.csproj",
+        "packagesPath": "C:\\Users\\iokulov\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\iokulov\\RiderProjects\\fontech\\FonTech.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "UsingMicrosoftNETSdk": false,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/c100bit/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\iokulov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/Users/c100bit/RiderProjects/FonTech/FonTech.Domain/FonTech.Domain.csproj": {
-                "projectPath": "/Users/c100bit/RiderProjects/FonTech/FonTech.Domain/FonTech.Domain.csproj"
+              "C:\\Users\\iokulov\\RiderProjects\\fontech\\FonTech.Domain\\FonTech.Domain.csproj": {
+                "projectPath": "C:\\Users\\iokulov\\RiderProjects\\fontech\\FonTech.Domain\\FonTech.Domain.csproj"
               }
             }
           }
@@ -77,27 +83,33 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/c100bit/.dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/c100bit/RiderProjects/FonTech/FonTech.Domain/FonTech.Domain.csproj": {
+    "C:\\Users\\iokulov\\RiderProjects\\fontech\\FonTech.Domain\\FonTech.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/c100bit/RiderProjects/FonTech/FonTech.Domain/FonTech.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\iokulov\\RiderProjects\\fontech\\FonTech.Domain\\FonTech.Domain.csproj",
         "projectName": "FonTech.Domain",
-        "projectPath": "/Users/c100bit/RiderProjects/FonTech/FonTech.Domain/FonTech.Domain.csproj",
-        "packagesPath": "/Users/c100bit/.nuget/packages/",
-        "outputPath": "/Users/c100bit/RiderProjects/FonTech/FonTech.Domain/obj/",
+        "projectPath": "C:\\Users\\iokulov\\RiderProjects\\fontech\\FonTech.Domain\\FonTech.Domain.csproj",
+        "packagesPath": "C:\\Users\\iokulov\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\iokulov\\RiderProjects\\fontech\\FonTech.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "UsingMicrosoftNETSdk": false,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/c100bit/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\iokulov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -136,7 +148,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/c100bit/.dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

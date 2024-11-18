@@ -8,6 +8,9 @@ public class ReportMapping : Profile
 {
     public ReportMapping()
     {
-        CreateMap<Report, ReportDto>().ReverseMap();
+        CreateMap<Report, ReportDto>().ForCtorParam(
+            "DateCreated", opt =>
+                opt.MapFrom(src => src.CreatedAt)
+        ).ReverseMap();
     }
 }

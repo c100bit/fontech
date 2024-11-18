@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "NlPIUPogoLcnZKxb7xbgZPsn8y6IA8KDSASDVOpEnxA=",
+  "Source": "FonTech.Api",
+  "BasePath": "_content/FonTech.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
