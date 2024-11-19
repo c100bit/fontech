@@ -33,4 +33,7 @@
     <data name="PasswordNotEqualsPasswordConfirm" xml:space="preserve">
         <value>Пароли не равны</value>
     </data>
+    <data name="InvalidClientRequest" xml:space="preserve">
+        <value>Ошибка запроса клиента</value>
+    </data>
 </root>

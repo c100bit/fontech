@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FonTech.Api</name>
+    </assembly>
+    <members>
+        <member name="T:FonTech.Api.Controllers.ReportController">
+            <summary>
+            
+            </summary>
+            <param name="service"></param>
+        </member>
+        <member name="M:FonTech.Api.Controllers.ReportController.#ctor(FonTech.Domain.Interfaces.Services.IReportService)">
+            <summary>
+            
+            </summary>
+            <param name="service"></param>
+        </member>
+        <member name="M:FonTech.Api.Controllers.ReportController.GetUserReports(System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:FonTech.Api.Controllers.ReportController.Create(FonTech.Domain.Dto.Report.CreateReportDto)" -->
+        <member name="T:FonTech.Api.Controllers.TokenController">
+            <summary>
+            </summary>
+            <param name="service"></param>
+        </member>
+        <member name="M:FonTech.Api.Controllers.TokenController.#ctor(FonTech.Domain.Interfaces.Services.ITokenService)">
+            <summary>
+            </summary>
+            <param name="service"></param>
+        </member>
+        <member name="M:FonTech.Api.Startup.AddAuthenticationAndAuthorization(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.AspNetCore.Builder.WebApplicationBuilder)">
+            <summary>
+                Auth and auth
+            </summary>
+            <param name="services"></param>
+            <param name="builder"></param>
+        </member>
+        <member name="M:FonTech.Api.Startup.AddSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            </summary>
+            <param name="services"></param>
+        </member>
+    </members>
+</doc>

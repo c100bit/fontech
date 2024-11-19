@@ -6,11 +6,12 @@ namespace FonTech.DAL.Interceptors;
 
 public class DateInterceptor : SaveChangesInterceptor
 {
-    public override ValueTask<int> SavedChangesAsync(SaveChangesCompletedEventData eventData, int result,
+    public override ValueTask<InterceptionResult<int>> SavingChangesAsync(DbContextEventData eventData,
+        InterceptionResult<int> result,
         CancellationToken cancellationToken = new())
     {
         var dbContext = eventData.Context;
-        if (dbContext == null) return base.SavedChangesAsync(eventData, result, cancellationToken);
+        if (dbContext == null) return base.SavingChangesAsync(eventData, result, cancellationToken);
 
         var entries = dbContext.ChangeTracker.Entries<IAuditable>();
         foreach (var entry in entries)
@@ -22,7 +23,7 @@ public class DateInterceptor : SaveChangesInterceptor
                 entry.Property(x => x.UpdatedAt).CurrentValue = DateTime.UtcNow;
         }
 
-        return base.SavedChangesAsync(eventData, result, cancellationToken);
+        return base.SavingChangesAsync(eventData, result, cancellationToken);
     }
 
     public override InterceptionResult<int> SavingChanges(DbContextEventData eventData, InterceptionResult<int> result)

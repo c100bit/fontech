@@ -18,7 +18,7 @@ public class AuthController(IAuthService authService) : Controller
         return BadRequest(response);
     }
 
-
+    [HttpPost("login")]
     public async Task<ActionResult<BaseResult<TokenDto>>> Login([FromBody] LoginUserDto dto)
     {
         var response = await authService.Login(dto);

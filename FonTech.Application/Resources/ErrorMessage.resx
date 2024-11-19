@@ -45,4 +45,13 @@
     <data name="UserAlreadyExists" xml:space="preserve">
         <value>Пользователь уже существует</value>
     </data>
+    <data name="PasswordIsWrong" xml:space="preserve">
+        <value>Пароль неверный</value>
+    </data>
+    <data name="InvalidToken" xml:space="preserve">
+        <value>Невалидный токен</value>
+    </data>
+    <data name="InvalidClientRequest" xml:space="preserve">
+        <value/>
+    </data>
 </root>

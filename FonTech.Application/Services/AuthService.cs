@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 using AutoMapper;
 using FonTech.Application.Resources;
@@ -14,7 +15,12 @@ using Serilog;
 
 namespace FonTech.Application.Services;
 
-public class AuthService(IBaseRepository<User> repository, ILogger logger, IMapper mapper) : IAuthService
+public class AuthService(
+    IBaseRepository<User> repository,
+    ILogger logger,
+    IMapper mapper,
+    ITokenService tokenService,
+    IBaseRepository<UserToken> tokenRepository) : IAuthService
 {
     public async Task<BaseResult<UserDto>> Register(RegisterUserDto dto)
     {
@@ -57,14 +63,76 @@ public class AuthService(IBaseRepository<User> repository, ILogger logger, IMapp
         }
     }
 
-    public Task<BaseResult<TokenDto>> Login(LoginUserDto dto)
+    public async Task<BaseResult<TokenDto>> Login(LoginUserDto dto)
     {
-        throw new NotImplementedException();
+        try
+        {
+            var user = await repository.GetAll().FirstOrDefaultAsync(u => u.Login == dto.Login);
+            if (user == null)
+                return new BaseResult<TokenDto>
+                {
+                    ErrorCode = (int)ErrorCodes.UserNotFound,
+                    ErrorMessage = ErrorMessage.UserNotFound
+                };
+            if (!IsVerifiedPassword(dto.Password, user.Password))
+                return new BaseResult<TokenDto>
+                {
+                    ErrorCode = (int)ErrorCodes.PasswordIsWrong,
+                    ErrorMessage = ErrorMessage.PasswordIsWrong
+                };
+            var token = await tokenRepository.GetAll().FirstOrDefaultAsync(x => x.UserId == user.Id);
+            var refreshToken = tokenService.GenerateRefreshToken();
+            var claims = new List<Claim>
+            {
+                new(ClaimTypes.Name, user.Login),
+                new(ClaimTypes.Role, "User")
+            };
+            var accessToken = tokenService.GenerateAccessToken(claims);
+            if (token == null)
+            {
+                token = new UserToken
+                {
+                    UserId = user.Id,
+                    RefreshToken = refreshToken,
+                    RefreshTokenExpiryTime = DateTime.Now.AddDays(7)
+                };
+                await tokenRepository.CreateAsync(token);
+            }
+            else
+            {
+                token.RefreshToken = refreshToken;
+                token.RefreshTokenExpiryTime = DateTime.Now.AddDays(7);
+            }
+
+            return new BaseResult<TokenDto>
+            {
+                Data = new TokenDto
+                {
+                    AccessToken = accessToken,
+                    RefreshToken = refreshToken
+                }
+            };
+        }
+        catch (Exception e)
+        {
+            logger.Error(e, e.Message);
+            return new BaseResult<TokenDto>
+            {
+                ErrorCode = (int)ErrorCodes.InternalServerError,
+                ErrorMessage = ErrorMessage.InternalServerError
+            };
+        }
     }
 
     private static string HashPassword(string password)
     {
         var bytes = SHA256.HashData(Encoding.UTF8.GetBytes(password));
-        return BitConverter.ToString(bytes).ToLower();
+        return Convert.ToBase64String(bytes);
+    }
+
+    private static bool IsVerifiedPassword(string userPassword, string hashedPassword)
+    {
+        var hash = HashPassword(userPassword);
+        return hash == hashedPassword;
     }
 }
