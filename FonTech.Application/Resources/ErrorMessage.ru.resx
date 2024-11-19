@@ -30,4 +30,7 @@
     <data name="UserNotFound" xml:space="preserve">
         <value>Пользователь не найден</value>
     </data>
+    <data name="PasswordNotEqualsPasswordConfirm" xml:space="preserve">
+        <value>Пароли не равны</value>
+    </data>
 </root>

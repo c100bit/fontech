@@ -8,5 +8,8 @@ public enum ErrorCodes
     ReportNotFound = 1,
     ReportAlreadyExists = 2,
 
-    UserNotFound = 11
+    UserNotFound = 11,
+
+    PaswordNotEqualsPasswordConfirm = 21,
+    UserAlreadyExists = 22
 }

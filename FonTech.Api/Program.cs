@@ -1,9 +1,11 @@
 using FonTech.Api;
 using FonTech.Application.DependencyInjection;
 using FonTech.DAL.DependencyInjection;
+using FonTech.Domain.Settings;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection(JwtSettings.DefaultSection));
 
 builder.Host.UseSerilog((context, configuration) =>
     configuration.ReadFrom.Configuration(context.Configuration));
@@ -11,6 +13,7 @@ builder.Host.UseSerilog((context, configuration) =>
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddControllers();
+builder.Services.AddAuthenticationAndAuthorization(builder);
 builder.Services.AddSwagger();
 builder.Services.AddDataAccessLayer(builder.Configuration);
 builder.Services.AddApplication();
