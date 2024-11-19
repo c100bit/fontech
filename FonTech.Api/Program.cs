@@ -1,4 +1,5 @@
 using FonTech.Api;
+using FonTech.Api.Middlewares;
 using FonTech.Application.DependencyInjection;
 using FonTech.DAL.DependencyInjection;
 using FonTech.Domain.Settings;
@@ -17,7 +18,10 @@ builder.Services.AddAuthenticationAndAuthorization(builder);
 builder.Services.AddSwagger();
 builder.Services.AddDataAccessLayer(builder.Configuration);
 builder.Services.AddApplication();
+
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -31,6 +35,8 @@ if (app.Environment.IsDevelopment())
     });
     app.MapOpenApi();
 }
+
+app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
 app.MapControllers();
 app.UseHttpsRedirection();

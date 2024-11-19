@@ -143,7 +143,8 @@ public class ReportService(
                     ErrorMessage = result.ErrorMessage
                 };
 
-            await reportRepository.RemoveAsync(report!);
+            reportRepository.Remove(report!);
+            await reportRepository.SaveChangesAsync();
             return new BaseResult<ReportDto>
             {
                 Data = mapper.Map<ReportDto>(report)
@@ -174,8 +175,8 @@ public class ReportService(
                 };
             report!.Name = dto.Name;
             report.Description = dto.Description;
-            await reportRepository.UpdateAsync(report);
-
+            reportRepository.Update(report);
+            await reportRepository.SaveChangesAsync();
             return new BaseResult<ReportDto>
             {
                 Data = mapper.Map<ReportDto>(report)

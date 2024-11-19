@@ -17,6 +17,9 @@ namespace FonTech.Application.Services;
 
 public class AuthService(
     IBaseRepository<User> repository,
+    IBaseRepository<Role> roleRepository,
+    IBaseRepository<UserRole> userRoleRepository,
+    IUnitOfWork unitOfWork,
     ILogger logger,
     IMapper mapper,
     ITokenService tokenService,
@@ -28,46 +31,64 @@ public class AuthService(
             return new BaseResult<UserDto>
             {
                 ErrorMessage = ErrorMessage.PasswordNotEqualsPasswordConfirm,
-                ErrorCode = (int)ErrorCodes.PaswordNotEqualsPasswordConfirm
+                ErrorCode = (int)ErrorCodes.PasswordNotEqualsPasswordConfirm
             };
+
+
+        var user = await repository.GetAll().FirstOrDefaultAsync(u => u.Login == dto.Login);
+        if (user != null)
+            return new BaseResult<UserDto>
+            {
+                ErrorCode = (int)ErrorCodes.UserAlreadyExists,
+                ErrorMessage = ErrorMessage.UserAlreadyExists
+            };
+        var hasUserPassword = HashPassword(dto.Password);
+
+        await using var transaction = await unitOfWork.BeginTransactionAsync();
 
         try
         {
-            var user = await repository.GetAll().FirstOrDefaultAsync(u => u.Login == dto.Login);
-            if (user != null)
-                return new BaseResult<UserDto>
-                {
-                    ErrorCode = (int)ErrorCodes.UserAlreadyExists,
-                    ErrorMessage = ErrorMessage.UserAlreadyExists
-                };
-            var hasUserPassword = HashPassword(dto.Password);
             user = new User
             {
                 Login = dto.Login,
                 Password = hasUserPassword
             };
-            await repository.CreateAsync(user);
-            return new BaseResult<UserDto>
+
+            await unitOfWork.Users.CreateAsync(user);
+            var role = await roleRepository.GetAll().FirstOrDefaultAsync(r => r.Name == "User");
+            if (role == null)
+                return new BaseResult<UserDto>
+                {
+                    ErrorMessage = ErrorMessage.RoleNotFound,
+                    ErrorCode = (int)ErrorCodes.RoleNotFound
+                };
+
+            var userRole = new UserRole
             {
-                Data = mapper.Map<UserDto>(user)
+                UserId = user.Id,
+                RoleId = role.Id
             };
+            await unitOfWork.UserRoles.CreateAsync(userRole);
+            await transaction.CommitAsync();
         }
         catch (Exception e)
         {
-            logger.Error(e, e.Message);
-            return new BaseResult<UserDto>
-            {
-                ErrorCode = (int)ErrorCodes.InternalServerError,
-                ErrorMessage = ErrorMessage.InternalServerError
-            };
+            await transaction.RollbackAsync();
         }
+
+
+        return new BaseResult<UserDto>
+        {
+            Data = mapper.Map<UserDto>(user)
+        };
     }
 
     public async Task<BaseResult<TokenDto>> Login(LoginUserDto dto)
     {
         try
         {
-            var user = await repository.GetAll().FirstOrDefaultAsync(u => u.Login == dto.Login);
+            var user = await repository.GetAll().Include(x => x.Roles)
+                .FirstOrDefaultAsync(u => u.Login == dto.Login);
             if (user == null)
                 return new BaseResult<TokenDto>
                 {
@@ -82,11 +103,11 @@ public class AuthService(
                 };
             var token = await tokenRepository.GetAll().FirstOrDefaultAsync(x => x.UserId == user.Id);
             var refreshToken = tokenService.GenerateRefreshToken();
-            var claims = new List<Claim>
-            {
-                new(ClaimTypes.Name, user.Login),
-                new(ClaimTypes.Role, "User")
-            };
+
+            var userRoles = user.Roles;
+            var claims = userRoles.Select(x => new Claim(ClaimTypes.Role, x.Name)).ToList();
+            claims.Add(new Claim(ClaimTypes.Name, user.Login));
+
             var accessToken = tokenService.GenerateAccessToken(claims);
             if (token == null)
             {

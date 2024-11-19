@@ -15,25 +15,28 @@ public class BaseRepository<TEntity>(ApplicationDbContext context) : IBaseReposi
         ArgumentNullException.ThrowIfNull(entity);
 
         await context.AddAsync(entity);
-        await context.SaveChangesAsync();
         return entity;
     }
 
-    public async Task<TEntity> UpdateAsync(TEntity entity)
+
+    public TEntity Update(TEntity entity)
     {
         ArgumentNullException.ThrowIfNull(entity);
 
         context.Update(entity);
-        await context.SaveChangesAsync();
         return entity;
     }
 
-    public async Task<TEntity> RemoveAsync(TEntity entity)
+    public TEntity Remove(TEntity entity)
     {
         ArgumentNullException.ThrowIfNull(entity);
 
         context.Remove(entity);
-        await context.SaveChangesAsync();
         return entity;
+    }
+
+    public async Task<int> SaveChangesAsync()
+    {
+        return await context.SaveChangesAsync();
     }
 }

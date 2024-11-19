@@ -24,6 +24,35 @@
             <returns></returns>
         </member>
         <!-- Badly formed XML comment ignored for member "M:FonTech.Api.Controllers.ReportController.Create(FonTech.Domain.Dto.Report.CreateReportDto)" -->
+        <member name="T:FonTech.Api.Controllers.RoloeController">
+            <summary>
+            </summary>
+            <param name="service"></param>
+        </member>
+        <member name="M:FonTech.Api.Controllers.RoloeController.#ctor(FonTech.Domain.Interfaces.Services.IRoleService)">
+            <summary>
+            </summary>
+            <param name="service"></param>
+        </member>
+        <member name="M:FonTech.Api.Controllers.RoloeController.Delete(System.Int64)">
+            <summary>
+                Request for update report:
+                PUT
+                {
+                "name" "Report1",
+                "description": "Test"
+                }
+            </summary>
+            <param name="id"></param>
+            <response code="200">Если роль обновился</response>
+            <response code="400">Если роль не была обновлена</response>
+        </member>
+        <member name="M:FonTech.Api.Controllers.RoloeController.AddRoleForUser(FonTech.Domain.Dto.Role.UserRoleDto)">
+            <summary>
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
         <member name="T:FonTech.Api.Controllers.TokenController">
             <summary>
             </summary>

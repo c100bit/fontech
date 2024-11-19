@@ -54,4 +54,10 @@
     <data name="InvalidClientRequest" xml:space="preserve">
         <value/>
     </data>
+    <data name="RoleAlreadyExists" xml:space="preserve">
+        <value>Роль уже существует</value>
+    </data>
+    <data name="RoleNotFound" xml:space="preserve">
+        <value/>
+    </data>
 </root>

@@ -57,7 +57,8 @@ public class TokenService(IOptions<JwtSettings> options, IBaseRepository<User> u
         var newRefreshToken = GenerateRefreshToken();
 
         user.UserToken.RefreshToken = newRefreshToken;
-        await userRepository.UpdateAsync(user);
+        userRepository.Update(user);
+        await userRepository.SaveChangesAsync();
         return new BaseResult<TokenDto>
         {
             Data = new TokenDto
